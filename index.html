@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>114</title>
+<meta name="description" content="114 — a daily reader.">
+<meta name="theme-color" content="#0B0B0C">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,50,0..1&family=Inter:wght@400;500;600&family=Italianno&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0B0B0C;
+    --paper: #EFE5CE;
+    --bone: #D4CDB9;
+    --silver: #BFBFBB;
+    --whisper: #73716B;
+    --edge: #1A1A1A;
+    --accent: #9E3B2B;
+    --section: clamp(96px, 12vw, 200px);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--silver);
+    font-family: 'Fraunces', Georgia, serif;
+    font-feature-settings: "ss01", "ss02";
+    font-variation-settings: "SOFT" 50, "WONK" 0;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  a:hover { opacity: 0.7; transition: opacity 180ms cubic-bezier(0.22, 1, 0.36, 1); }
+
+  .micro {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .cursive {
+    font-family: 'Italianno', cursive;
+    font-size: clamp(28px, 3vw, 44px);
+    line-height: 1;
+  }
+  .serif-display {
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 144;
+    line-height: 0.9;
+    letter-spacing: -0.02em;
+  }
+  .serif-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-variation-settings: "SOFT" 50, "WONK" 0, "opsz" 72;
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+  }
+  .serif-body {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 14;
+    line-height: 1.65;
+  }
+
+  /* ================= HERO ================= */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px clamp(24px, 4vw, 80px) 48px;
+    position: relative;
+  }
+  .hero-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hero-mark {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: clamp(24px, 4vw, 56px);
+  }
+  .hero-numeral {
+    color: var(--paper);
+    font-size: clamp(180px, 28vw, 440px);
+    font-variation-settings: "SOFT" 50, "WONK" 1, "opsz" 144;
+  }
+  .hero-caption {
+    color: var(--paper);
+    text-align: center;
+  }
+  .hero-caption .label { color: var(--silver); opacity: 0.7; }
+  .hero-caption .tagline { margin-top: 8px; }
+  .hero-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    color: var(--whisper);
+  }
+  .hero-bottom .side { flex: 1; }
+  .hero-bottom .center { text-align: center; }
+  .hero-bottom .right { text-align: right; }
+
+  /* ================= EDITORIAL SECTION ================= */
+  section {
+    padding: var(--section) clamp(24px, 4vw, 80px);
+  }
+  section.paper { background: var(--paper); color: var(--ink); }
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+  .readable {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+  .masthead {
+    display: flex;
+    gap: 32px;
+    align-items: baseline;
+    margin-bottom: 48px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid currentColor;
+    opacity: 1;
+  }
+  .paper .masthead { border-bottom-color: var(--ink); }
+  .masthead .num { font-family: 'Fraunces', serif; font-weight: 900; font-size: 32px; font-variation-settings: "opsz" 72; }
+  .masthead .label { font-family: 'Inter', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; opacity: 0.75; }
+
+  h2.section-title {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-variation-settings: "SOFT" 50, "WONK" 0, "opsz" 72;
+    font-size: clamp(36px, 5.5vw, 68px);
+    line-height: 1.05;
+    letter-spacing: -0.015em;
+    margin-bottom: 40px;
+  }
+  .lead {
+    font-size: clamp(19px, 2vw, 24px);
+    font-variation-settings: "SOFT" 30, "WONK" 0, "opsz" 24;
+    line-height: 1.55;
+    max-width: 680px;
+    margin-bottom: 32px;
+  }
+  .body {
+    font-size: 17px;
+    line-height: 1.7;
+    max-width: 680px;
+  }
+  .body + .body { margin-top: 20px; }
+
+  /* ================= TRIPTYCH ================= */
+  .triptych {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(32px, 4vw, 80px);
+    margin-top: 64px;
+  }
+  .triptych-item h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-variation-settings: "opsz" 72;
+    font-size: 28px;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+  .triptych-item p { font-size: 17px; line-height: 1.6; }
+  @media (max-width: 800px) {
+    .triptych { grid-template-columns: 1fr; gap: 48px; }
+  }
+
+  /* ================= PULL QUOTE ================= */
+  .pull {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-style: italic;
+    font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 72;
+    font-size: clamp(32px, 4.5vw, 56px);
+    line-height: 1.2;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--paper);
+  }
+
+  /* ================= ACCESS CTA ================= */
+  .access {
+    text-align: center;
+  }
+  .btn {
+    display: inline-block;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 20px 48px;
+    border: 1px solid var(--paper);
+    color: var(--paper);
+    background: transparent;
+    transition: all 240ms cubic-bezier(0.22, 1, 0.36, 1);
+    margin-top: 32px;
+  }
+  .btn:hover {
+    background: var(--paper);
+    color: var(--ink);
+    opacity: 1;
+  }
+  .paper .btn {
+    border-color: var(--ink);
+    color: var(--ink);
+  }
+  .paper .btn:hover {
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  .price {
+    margin-top: 48px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--whisper);
+  }
+  .price strong {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    color: var(--paper);
+    letter-spacing: normal;
+  }
+  .paper .price strong { color: var(--ink); }
+
+  /* ================= FOOTER ================= */
+  footer {
+    background: var(--ink);
+    color: var(--whisper);
+    padding: 96px clamp(24px, 4vw, 80px) 48px;
+    border-top: 1px solid var(--edge);
+  }
+  .footer-mark {
+    color: var(--paper);
+    font-family: 'Fraunces', serif;
+    font-weight: 900;
+    font-variation-settings: "opsz" 144, "WONK" 1;
+    font-size: 64px;
+    text-align: center;
+    margin-bottom: 8px;
+  }
+  .footer-tag {
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .footer-cols {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 32px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .footer-cols > div {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .footer-cols .label { margin-bottom: 8px; color: var(--silver); opacity: 0.7; }
+  .footer-cols a { font-family: 'Fraunces', serif; font-size: 16px; }
+  .footer-legal {
+    margin-top: 80px;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--whisper);
+    opacity: 0.6;
+  }
+
+  /* ================= ACCENT RULE ================= */
+  .hairline {
+    display: block;
+    width: 60px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.35;
+    margin: 40px auto;
+  }
+
+  /* Focus ring */
+  a:focus-visible, button:focus-visible {
+    outline: 2px solid var(--bone);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ================== HERO ================== -->
+<section class="hero">
+  <div class="hero-top">
+    <span class="micro" style="color: var(--whisper);">114</span>
+    <span class="micro" style="color: var(--whisper);">est. MMXXVI</span>
+  </div>
+
+  <div class="hero-mark">
+    <div class="serif-display hero-numeral">114</div>
+    <div class="hero-caption">
+      <div class="cursive">a daily reader</div>
+    </div>
+  </div>
+
+  <div class="hero-bottom">
+    <div class="side"><span class="micro">I · The Invitation</span></div>
+    <div class="center"><a href="#invitation" class="micro">↓ Read on</a></div>
+    <div class="side right"><span class="micro">Munich · DE</span></div>
+  </div>
+</section>
+
+<!-- ================== I. INVITATION ================== -->
+<section class="paper" id="invitation">
+  <div class="container readable">
+    <div class="masthead">
+      <span class="num">I</span>
+      <span class="label">The Invitation</span>
+    </div>
+    <h2 class="section-title">Some books are read once. Others are read every day, for a thousand years.</h2>
+    <p class="lead">114 is a reader made for the second kind — an old text, kept close, built for daily attention.</p>
+    <p class="body">It is made quietly. For readers who return. The reader assumes nothing about who you are or what you believe. It only assumes you would like to read well, and often, and without interruption.</p>
+  </div>
+</section>
+
+<!-- ================== II. THE PROMISE ================== -->
+<section id="promise">
+  <div class="container">
+    <div class="masthead" style="color: var(--paper);">
+      <span class="num" style="color: var(--paper);">II</span>
+      <span class="label">The Promise</span>
+    </div>
+    <div class="readable">
+      <h2 class="section-title" style="color: var(--paper);">Read. Remember. Return.</h2>
+    </div>
+    <div class="triptych" style="color: var(--silver);">
+      <div class="triptych-item">
+        <h3 style="color: var(--paper);">Read</h3>
+        <p>Typography considered for daily attention. No banners. No badges. No interruption. The text as the text.</p>
+      </div>
+      <div class="triptych-item">
+        <h3 style="color: var(--paper);">Remember</h3>
+        <p>Bookmarks, passages, small thoughts — kept privately. Synced only if you ask, offline otherwise.</p>
+      </div>
+      <div class="triptych-item">
+        <h3 style="color: var(--paper);">Return</h3>
+        <p>A gentle habit. Streaks without shame. A widget that says nothing of what you read. Only that you read.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== III. THE PULL QUOTE ================== -->
+<section>
+  <div class="container">
+    <p class="pull">Made for those who keep coming back.</p>
+  </div>
+</section>
+
+<!-- ================== IV. ON COST ================== -->
+<section class="paper" id="cost">
+  <div class="container readable">
+    <div class="masthead">
+      <span class="num">III</span>
+      <span class="label">On Cost</span>
+    </div>
+    <h2 class="section-title">The text is always free to read.</h2>
+    <p class="body">Premium exists to support the work — and to unlock what holds your reading together: unlimited bookmarks, reading statistics, quiet offline translations, a private companion that listens.</p>
+    <p class="body">No advertisements. No data sold. No ornament for its own sake.</p>
+    <div class="price" style="margin-top: 48px;">
+      <strong>€4.99</strong> monthly · <strong>€39.99</strong> yearly · seven-day trial
+    </div>
+  </div>
+</section>
+
+<!-- ================== V. ACCESS ================== -->
+<section id="access">
+  <div class="container readable access">
+    <div class="masthead" style="color: var(--paper); justify-content: center;">
+      <span class="num" style="color: var(--paper);">IV</span>
+      <span class="label">Access</span>
+    </div>
+    <h2 class="section-title" style="color: var(--paper);">Available in TestFlight.</h2>
+    <p class="body" style="color: var(--silver); margin-bottom: 16px;">The first readers are invited now. Public release follows.</p>
+    <a href="mailto:hello@read114.com?subject=TestFlight%20access" class="btn">Request access</a>
+    <p class="price">Public release expected in 2026.</p>
+  </div>
+</section>
+
+<!-- ================== FOOTER ================== -->
+<footer>
+  <div class="footer-mark">114</div>
+  <div class="footer-tag"><span class="cursive" style="color: var(--silver);">a daily reader</span></div>
+
+  <div class="footer-cols">
+    <div>
+      <span class="micro label">The Reader</span>
+      <a href="mailto:hello@read114.com">Contact</a>
+      <a href="/support">Support</a>
+    </div>
+    <div>
+      <span class="micro label">The Small Print</span>
+      <a href="/privacy">Privacy</a>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms</a>
+    </div>
+    <div>
+      <span class="micro label">Made By</span>
+      <span style="font-family: 'Fraunces', serif;">SUPERSMAIL</span>
+      <span style="font-family: 'Fraunces', serif;">Munich, Germany</span>
+    </div>
+  </div>
+
+  <div class="footer-legal">
+    114 · MMXXVI · All rights reserved
+  </div>
+</footer>
+
+</body>
+</html>

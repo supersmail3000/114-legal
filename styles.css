@@ -1,0 +1,189 @@
+:root {
+  --ink: #0B0B0C;
+  --paper: #EFE5CE;
+  --bone: #D4CDB9;
+  --silver: #BFBFBB;
+  --whisper: #73716B;
+  --edge: #1A1A1A;
+  --accent: #9E3B2B;
+  --section: clamp(72px, 10vw, 160px);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Fraunces', Georgia, serif;
+  font-variation-settings: "SOFT" 30, "WONK" 0;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 4px; }
+a:hover { color: var(--accent); transition: color 180ms cubic-bezier(0.22, 1, 0.36, 1); }
+
+.micro {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.cursive { font-family: 'Italianno', cursive; font-size: 36px; line-height: 1; }
+
+/* Page header */
+.pageheader {
+  background: var(--ink);
+  color: var(--silver);
+  padding: 40px clamp(24px, 4vw, 80px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--edge);
+}
+.pageheader a { text-decoration: none; }
+.pageheader .mark {
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-variation-settings: "opsz" 72, "WONK" 1;
+  color: var(--paper);
+  font-size: 40px;
+  line-height: 1;
+}
+.pageheader nav {
+  display: flex;
+  gap: 32px;
+}
+.pageheader nav a { text-decoration: none; }
+.pageheader nav a:hover { opacity: 0.7; color: inherit; }
+
+/* Hero masthead */
+.masthead-hero {
+  padding: var(--section) clamp(24px, 4vw, 80px) calc(var(--section) / 2);
+  text-align: center;
+  border-bottom: 1px solid var(--ink);
+}
+.masthead-hero .eyebrow {
+  color: var(--whisper);
+  margin-bottom: 32px;
+}
+.masthead-hero h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-variation-settings: "SOFT" 50, "WONK" 0, "opsz" 144;
+  font-size: clamp(48px, 9vw, 120px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.masthead-hero .sub {
+  font-family: 'Fraunces', serif;
+  font-size: 19px;
+  color: var(--whisper);
+  margin-top: 32px;
+  font-style: italic;
+}
+
+/* Article body */
+article {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: var(--section) clamp(24px, 4vw, 80px);
+}
+article h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 700;
+  font-variation-settings: "opsz" 72;
+  font-size: clamp(26px, 3vw, 36px);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin: 72px 0 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--ink);
+}
+article h2:first-child { margin-top: 0; }
+article h3 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-variation-settings: "opsz" 48;
+  font-size: 22px;
+  margin: 40px 0 12px;
+}
+article p { font-size: 17px; line-height: 1.75; margin: 0 0 16px; }
+article ul, article ol {
+  font-size: 17px;
+  line-height: 1.75;
+  padding-left: 24px;
+  margin: 0 0 24px;
+}
+article li { margin: 8px 0; }
+article strong { font-weight: 600; }
+article blockquote {
+  border-left: 2px solid var(--ink);
+  padding: 4px 0 4px 20px;
+  margin: 24px 0;
+  font-style: italic;
+  color: var(--whisper);
+}
+article hr {
+  border: none;
+  border-top: 1px solid var(--ink);
+  margin: 64px 0;
+  opacity: 0.3;
+}
+
+/* Footer */
+footer {
+  background: var(--ink);
+  color: var(--whisper);
+  padding: 96px clamp(24px, 4vw, 80px) 48px;
+  border-top: 1px solid var(--edge);
+}
+.footer-mark {
+  color: var(--paper);
+  font-family: 'Fraunces', serif;
+  font-weight: 900;
+  font-variation-settings: "opsz" 144, "WONK" 1;
+  font-size: 56px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.footer-tag {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.footer-cols {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.footer-cols > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-cols .label { margin-bottom: 8px; color: var(--silver); opacity: 0.7; }
+.footer-cols a { font-family: 'Fraunces', serif; font-size: 16px; text-decoration: none; }
+.footer-legal {
+  margin-top: 80px;
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--whisper);
+  opacity: 0.6;
+}
+
+a:focus-visible, button:focus-visible {
+  outline: 2px solid var(--ink);
+  outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .pageheader nav { gap: 16px; }
+  .pageheader nav a { font-size: 13px; }
+  article p, article ul, article ol { font-size: 16px; }
+}
